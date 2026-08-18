@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Oracle</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        #resultado {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-left: 4px solid #f39c12;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Conexión a Oracle Cloud</h2>
+    <button onclick="probarConexion()">Ejecutar Prueba de Conexión</button>
+
+    <!-- Aquí se mostrará el mensaje que venga desde C# -->
+    <div id="resultado">Esperando para iniciar prueba...</div>
+
+    <script>
+        async function probarConexion() {
+            const divResultado = document.getElementById('resultado');
+            divResultado.innerText = "Conectando al servidor y procesando...";
+
+            try {
+                const respuesta = await fetch('/api/probar-oracle');
+
+                if (respuesta.ok) {
+                    // AQUÍ ESTÁ LA MAGIA: Le pedimos a JS que lea la respuesta como JSON
+                    const datosJson = await respuesta.json();
+
+                    // Ahora podemos acceder a los campos de forma separada
+                    if (datosJson.success) {
+                        divResultado.style.borderLeftColor = "green"; // Color verde si hay éxito
+                        divResultado.innerHTML = `
+                            <strong>Estado:</strong> Conectado<br>
+                            <strong>Hora de consulta:</strong> ${datosJson.timestamp}<br>
+                            <strong>Detalle:</strong> ${datosJson.message}
+                        `;
+                    } else {
+                        divResultado.style.borderLeftColor = "red"; // Color rojo si Oracle falló
+                        divResultado.innerText = `Fallo en base de datos: ${datosJson.message}`;
+                    }
+
+                } else {
+                    divResultado.style.borderLeftColor = "red";
+                    divResultado.innerText = `El servidor respondió con código de error HTTP: ${respuesta.status}`;
+                }
+            } catch (error) {
+                divResultado.style.borderLeftColor = "red";
+                divResultado.innerText = "Error en la red. Asegúrate de iniciar la aplicación desde Visual Studio (F5) y no abriendo el HTML directamente.";
+                console.error("Detalle técnico del frontend:", error);
+            }
+        }
+    </script>
+
+</body>
+</html>

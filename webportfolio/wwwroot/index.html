@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Construcción</title>
+    <style>
+        /* Reseteamos los márgenes por defecto del navegador */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Configuramos el fondo y usamos Flexbox para alinear los elementos */
+        body {
+            /* Un fondo gris muy oscuro, casi negro, elegante */
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Ocupar siempre el 100% de la altura visible de la pantalla */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Empuja el contenido a los extremos */
+            align-items: center;
+        }
+
+        /* Contenedor central invisible para equilibrar el espacio superior */
+        .espaciador-superior {
+            flex-grow: 1;
+        }
+
+        /* Estilo para el contenedor del logo central */
+        .contenedor-logo {
+            flex-grow: 2; /* Toma más espacio para mantenerse en el centro visual */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .contenedor-logo img {
+                /* Tamaño máximo para que no se desborde, se ajustará en móviles */
+                max-width: 600px;
+                height: auto;
+                /* Si no tienes logo a la mano, le aplicamos un pequeño filtro para que el texto alternativo se vea presentable */
+                font-size: 2rem;
+                color: #f39c12;
+            }
+
+        /* Estilo para el texto inferior */
+        .contenedor-texto {
+            flex-grow: 1;
+            display: flex;
+            align-items: flex-end; /* Lo alinea hacia abajo */
+            padding-bottom: 40px; /* Separación del borde inferior de la pantalla */
+        }
+
+            .contenedor-texto h1 {
+                font-size: 1.5rem;
+                letter-spacing: 5px; /* Separa las letras para un look más moderno */
+                font-weight: 300;
+                text-transform: uppercase;
+                color: #bdc3c7; /* Un gris claro para el texto */
+                text-align: center;
+            }
+
+        /* Animación suave (Opcional) */
+        .fade-in {
+            animation: fadeIn ease 3s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="espaciador-superior"></div>
+
+    <!-- SECCIÓN CENTRAL: LOGO -->
+    <div class="contenedor-logo fade-in">
+        <!-- Reemplaza "logo.png" por la ruta real de tu imagen, o déjalo vacío para ver el texto alternativo -->
+        <img src="images/cormen_3d_black_2.jpg" alt="CORMEN">
+    </div>
+
+    <!-- SECCIÓN INFERIOR: TEXTO -->
+    <div class="contenedor-texto fade-in">
+        <h1>En Construcción</h1>
+    </div>
+
+</body>
+</html>

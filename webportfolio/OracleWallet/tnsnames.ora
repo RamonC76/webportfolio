@@ -1,0 +1,12 @@
+q022yb0tr3fmsvh3_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.mx-queretaro-1.oraclecloud.com))(connect_data=(service_name=g03e389d89f047d_q022yb0tr3fmsvh3_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+q022yb0tr3fmsvh3_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.mx-queretaro-1.oraclecloud.com))(connect_data=(service_name=g03e389d89f047d_q022yb0tr3fmsvh3_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+q022yb0tr3fmsvh3_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.mx-queretaro-1.oraclecloud.com))(connect_data=(service_name=g03e389d89f047d_q022yb0tr3fmsvh3_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+q022yb0tr3fmsvh3_tp = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.mx-queretaro-1.oraclecloud.com))(connect_data=(service_name=g03e389d89f047d_q022yb0tr3fmsvh3_tp.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+q022yb0tr3fmsvh3_tpurgent = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.mx-queretaro-1.oraclecloud.com))(connect_data=(service_name=g03e389d89f047d_q022yb0tr3fmsvh3_tpurgent.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+
+
